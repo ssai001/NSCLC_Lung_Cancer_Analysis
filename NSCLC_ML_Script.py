@@ -251,10 +251,10 @@ class LRMetrics:
         lr_recall_score = recall_score(self.y_test, self.LR_pred)
         return lr_recall_score
 
-mt = LRMetrics(target_a_test,gc_predictions_LR)
-mt_LR_CM = mt.LRConfusionMatrix()
-mt_LR_AS = mt.LRAccuracyScore()
-mt_LR_RS = mt.LRREcallScore()
+LR_mt = LRMetrics(target_a_test,gc_predictions_LR)
+mt_LR_CM = LR_mt.LRConfusionMatrix()
+mt_LR_AS = LR_mt.LRAccuracyScore()
+mt_LR_RS = LR_mt.LRREcallScore()
 print(mt_LR_CM,mt_LR_AS,mt_LR_RS)
 
 
