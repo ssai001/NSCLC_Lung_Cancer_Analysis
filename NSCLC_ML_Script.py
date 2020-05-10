@@ -88,7 +88,6 @@ merged_dataframes.drop(merged_dataframes.columns[drop_cols], axis = 1, inplace =
 
 #%%
 #Determine datatypes of columns that need to be converted from categorical to numerical - 10
-list(enumerate(merged_dataframes.columns))
 merged_dataframes.select_dtypes(include=['number'])
 
 
