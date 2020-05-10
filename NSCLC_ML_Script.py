@@ -125,75 +125,75 @@ features_a_train,target_a_train = smt.fit_sample(features_a_train,target_a_train
 np.bincount(target_a_train)
 
 #%%
-class Models:
-    def __init__(self,X_train,X_test,y_train,y_test):
-        self.X_train=X_train
-        self.X_test=X_test
-        self.y_train=y_train
-        self.y_test=y_test
-    def LogisticRegression(self):
-        lr =  LogisticRegression()
-        lr.fit(self.X_train, self.y_train)
-        y_pred1=lr.predict(self.X_test)
-        lr_confusion_matrix = confusion_matrix(self.y_test, y_pred1)
-        lr_accuracy_score = accuracy_score(self.y_test, y_pred1)
-        lr_recall_score = recall_score(self.y_test, y_pred1)
-        print(type(y_pred1))
-        print("Logistic Regression Predictions: \n{}".format(y_pred1))
-        print("Logistic Regression Confusion Matrix: \n{}".format(lr_confusion_matrix))
-        print("Logistic Regression Accuracy Score: {}%".format(round(lr_accuracy_score * 100, 0)))
-        print("Logistic Regression Recall Score: {}%".format(round(lr_recall_score * 100, 0)))
-    def NaiveBayes(self):
-        nb =  GaussianNB()
-        nb.fit(self.X_train, self.y_train)
-        y_pred2=nb.predict(self.X_test)
-        nb_confusion_matrix = confusion_matrix(self.y_test, y_pred2)
-        nb_accuracy_score = accuracy_score(self.y_test, y_pred2)
-        nb_recall_score = recall_score(self.y_test, y_pred2)
-        print("\n\nNaive Bayes Predictions: \n{}".format(y_pred2))
-        print("Naive Bayes Confusion matrix: \n{}".format(nb_confusion_matrix))
-        print("Naive Bayes Accuracy Score: {}%".format(round(nb_accuracy_score * 100, 0)))
-        print("Naive Bayes Recall Score: {}%".format(round(nb_recall_score * 100, 0)))
-    def DecisionTree(self):
-        dt = DecisionTreeClassifier()
-        dt.fit(self.X_train, self.y_train)
-        y_pred3=dt.predict(self.X_test)
-        dt_confusion_matrix = confusion_matrix(self.y_test, y_pred3)
-        dt_accuracy_score = accuracy_score(self.y_test, y_pred3)
-        dt_recall_score = recall_score(self.y_test, y_pred3)
-        print("\n\nDecision Tree Predictions: \n{}".format(y_pred3))
-        print("Decision Tree Confusion matrix: \n{}".format(dt_confusion_matrix))
-        print("Decision Tree Accuracy Score: {}%".format(round(dt_accuracy_score * 100, 0)))
-        print("Decision Tree Recall Score: {}%".format(round(dt_recall_score * 100, 0)))
-    def KNN(self):
-        knn = KNeighborsClassifier(n_neighbors=15)
-        knn.fit(self.X_train, self.y_train)
-        y_pred4=knn.predict(self.X_test)
-        knn_confusion_matrix = confusion_matrix(self.y_test, y_pred4)
-        knn_accuracy_score = accuracy_score(self.y_test, y_pred4)
-        knn_recall_score = recall_score(self.y_test, y_pred4)
-        print("\n\nKNN Predictions: \n{}".format(y_pred4))
-        print("KNN Confusion matrix: \n{}".format(knn_confusion_matrix))
-        print("KNN Accuracy Score: {}%".format(round(knn_accuracy_score * 100, 0)))
-        print("KNN Recall Score: {}%".format(round(knn_recall_score * 100, 0)))
-    def LinearDiscriminantAnalysis(self):
-        lda = LinearDiscriminantAnalysis()
-        lda.fit(self.X_train, self.y_train)
-        y_pred5=lda.predict(self.X_test)
-        lda_confusion_matrix = confusion_matrix(self.y_test, y_pred5)
-        lda_accuracy_score = accuracy_score(self.y_test, y_pred5)
-        lda_recall_score = recall_score(self.y_test, y_pred5)
-        print("\n\nLDA Predictions: \n{}".format(y_pred5))
-        print("LDA Confusion matrix: \n{}".format(lda_confusion_matrix))
-        print("LDA Accuracy Score: {}%".format(round(lda_accuracy_score * 100, 0)))
-        print("LDA Recall Score: {}%".format(round(lda_recall_score * 100, 0)))
+# class Models:
+#     def __init__(self,X_train,X_test,y_train,y_test):
+#         self.X_train=X_train
+#         self.X_test=X_test
+#         self.y_train=y_train
+#         self.y_test=y_test
+#     def LogisticRegression(self):
+#         lr =  LogisticRegression()
+#         lr.fit(self.X_train, self.y_train)
+#         y_pred1=lr.predict(self.X_test)
+#         lr_confusion_matrix = confusion_matrix(self.y_test, y_pred1)
+#         lr_accuracy_score = accuracy_score(self.y_test, y_pred1)
+#         lr_recall_score = recall_score(self.y_test, y_pred1)
+#         print(type(y_pred1))
+#         print("Logistic Regression Predictions: \n{}".format(y_pred1))
+#         print("Logistic Regression Confusion Matrix: \n{}".format(lr_confusion_matrix))
+#         print("Logistic Regression Accuracy Score: {}%".format(round(lr_accuracy_score * 100, 0)))
+#         print("Logistic Regression Recall Score: {}%".format(round(lr_recall_score * 100, 0)))
+#     def NaiveBayes(self):
+#         nb =  GaussianNB()
+#         nb.fit(self.X_train, self.y_train)
+#         y_pred2=nb.predict(self.X_test)
+#         nb_confusion_matrix = confusion_matrix(self.y_test, y_pred2)
+#         nb_accuracy_score = accuracy_score(self.y_test, y_pred2)
+#         nb_recall_score = recall_score(self.y_test, y_pred2)
+#         print("\n\nNaive Bayes Predictions: \n{}".format(y_pred2))
+#         print("Naive Bayes Confusion matrix: \n{}".format(nb_confusion_matrix))
+#         print("Naive Bayes Accuracy Score: {}%".format(round(nb_accuracy_score * 100, 0)))
+#         print("Naive Bayes Recall Score: {}%".format(round(nb_recall_score * 100, 0)))
+#     def DecisionTree(self):
+#         dt = DecisionTreeClassifier()
+#         dt.fit(self.X_train, self.y_train)
+#         y_pred3=dt.predict(self.X_test)
+#         dt_confusion_matrix = confusion_matrix(self.y_test, y_pred3)
+#         dt_accuracy_score = accuracy_score(self.y_test, y_pred3)
+#         dt_recall_score = recall_score(self.y_test, y_pred3)
+#         print("\n\nDecision Tree Predictions: \n{}".format(y_pred3))
+#         print("Decision Tree Confusion matrix: \n{}".format(dt_confusion_matrix))
+#         print("Decision Tree Accuracy Score: {}%".format(round(dt_accuracy_score * 100, 0)))
+#         print("Decision Tree Recall Score: {}%".format(round(dt_recall_score * 100, 0)))
+#     def KNN(self):
+#         knn = KNeighborsClassifier(n_neighbors=15)
+#         knn.fit(self.X_train, self.y_train)
+#         y_pred4=knn.predict(self.X_test)
+#         knn_confusion_matrix = confusion_matrix(self.y_test, y_pred4)
+#         knn_accuracy_score = accuracy_score(self.y_test, y_pred4)
+#         knn_recall_score = recall_score(self.y_test, y_pred4)
+#         print("\n\nKNN Predictions: \n{}".format(y_pred4))
+#         print("KNN Confusion matrix: \n{}".format(knn_confusion_matrix))
+#         print("KNN Accuracy Score: {}%".format(round(knn_accuracy_score * 100, 0)))
+#         print("KNN Recall Score: {}%".format(round(knn_recall_score * 100, 0)))
+#     def LinearDiscriminantAnalysis(self):
+#         lda = LinearDiscriminantAnalysis()
+#         lda.fit(self.X_train, self.y_train)
+#         y_pred5=lda.predict(self.X_test)
+#         lda_confusion_matrix = confusion_matrix(self.y_test, y_pred5)
+#         lda_accuracy_score = accuracy_score(self.y_test, y_pred5)
+#         lda_recall_score = recall_score(self.y_test, y_pred5)
+#         print("\n\nLDA Predictions: \n{}".format(y_pred5))
+#         print("LDA Confusion matrix: \n{}".format(lda_confusion_matrix))
+#         print("LDA Accuracy Score: {}%".format(round(lda_accuracy_score * 100, 0)))
+#         print("LDA Recall Score: {}%".format(round(lda_recall_score * 100, 0)))
 
-gc_models = Models(features_a_train, features_a_test, target_a_train, target_a_test)
-gc_models_LR = gc_models.LogisticRegression()
-gc_models_NB = gc_models.NaiveBayes()
-gc_models_DT = gc_models.DecisionTree()
-gc_models_KNN = gc_models.KNN()
-gc_models_LDA = gc_models.LinearDiscriminantAnalysis()
+# gc_models = Models(features_a_train, features_a_test, target_a_train, target_a_test)
+# gc_models_LR = gc_models.LogisticRegression()
+# gc_models_NB = gc_models.NaiveBayes()
+# gc_models_DT = gc_models.DecisionTree()
+# gc_models_KNN = gc_models.KNN()
+# gc_models_LDA = gc_models.LinearDiscriminantAnalysis()
 
 
 #%%
