@@ -95,11 +95,11 @@ merged_dataframes.select_dtypes(include=['number'])
 #Label encoding for target column - 11
 merged_dataframes.Outcome = merged_dataframes.Outcome.map({"Alive": 0, "Dead": 1})
 merged_dataframes = pd.get_dummies(merged_dataframes, drop_first=True)
-print(list(enumerate(merged_dataframes.columns)))
 merged_dataframes['Outcome'].value_counts()
 
 
 # %%
+#Use RandomForestClassifier library for feature selection - 12
 X = merged_dataframes.drop(['Outcome','ID'], axis=1)
 y = merged_dataframes.Outcome
 clf = RandomForestClassifier()
