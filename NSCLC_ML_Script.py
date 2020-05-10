@@ -59,7 +59,6 @@ for gene in unique_genes:
 #%%
 #Determine contents of new merged_dataframes columns - 6
 print(list(enumerate(merged_dataframes.columns)))
-print(len(list(merged_dataframes.columns)))
 
 
 #%%
