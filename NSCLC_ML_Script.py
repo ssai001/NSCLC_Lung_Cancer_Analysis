@@ -237,5 +237,7 @@ gc_predictions_LDA = gc_predictions.LinearDiscriminantAnalysis()
 
 
 #%%
-class LRMetrics(Predictions):
-    pass
+class LRMetrics:
+    def __init__(self,y_test,LRM_pred):
+        self.y_test = y_test
+        self.LRM_pred=LRM_pred
