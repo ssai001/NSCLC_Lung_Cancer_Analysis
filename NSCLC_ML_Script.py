@@ -242,7 +242,7 @@ class LRMetrics:
         self.y_test = y_test
         self.LR_pred=LR_pred
     def LRConfusionMatrix(self):
-        lr_confusion_matrix = confusion_matrix(self.y_test, self.LRM_pred)
+        lr_confusion_matrix = confusion_matrix(self.y_test, self.LR_pred)
         return lr_confusion_matrix
 
 mt = LRMetrics(target_a_test,gc_predictions_LR)
