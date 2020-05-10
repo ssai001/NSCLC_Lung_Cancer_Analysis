@@ -21,6 +21,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, recall_score
 
 
 #%%
+#Analyze content of genomics.csv file - 2
 clinical_data = pd.read_csv('clinical.csv')
 genomics_data = pd.read_csv('genomics.csv')
 unique_genes = genomics_data.Gene.unique()
@@ -29,27 +30,24 @@ print("There are {} unique genes among all patient ID's.".format(len(unique_gene
 
 
 #%%
+#Determine number of NA's per column for both csv files - 3
 print(clinical_data.columns[clinical_data.isna().any()].tolist())
 print(genomics_data.columns[genomics_data.isna().any()].tolist())
 
 
 # %%
-#Combine all genes that are common for each ID
+#Combine all genes that are common for each patient identifier on genomics.csv - 4
 genomics_data_grouped = genomics_data.groupby('ID')['Gene'].apply(list)
 print(genomics_data_grouped)
 
 # %%
-#Merging both the csv files together
+#Merging both the clinical and genomic csv files together - 5
 merged_dataframes = pd.merge(clinical_data, genomics_data_grouped, on="ID")
 print(merged_dataframes)
 
-#%%
-for row in merged_dataframes['Gene']:
-    print (row)
-
 
 #%%
-#Use the count function in Python for the gene lists in each row
+#Use the count function in Python to get number of occurrences of particular gene in each row - 6
 def count_occurrence(GeneName):
     new_column = []
     for row in merged_dataframes['Gene']:
