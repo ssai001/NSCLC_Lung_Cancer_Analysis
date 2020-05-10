@@ -109,6 +109,8 @@ feature_imp.sort_values(by = 0 , ascending = False)
 
 
 # %%
+#Generate features and target for train and test - 13
+#Implement SMOTE analysis to resolve class imbalance issue - 13
 features_a = merged_dataframes.iloc[:,[2,3,4,5,7,8,10,19,28,36]]
 target_a = merged_dataframes.iloc[:,1]
 features_a_train, features_a_test, target_a_train, target_a_test = train_test_split(features_a.values, target_a.values, random_state = 1, stratify=y)
@@ -117,6 +119,7 @@ features_a_train,target_a_train = smt.fit_sample(features_a_train,target_a_train
 np.bincount(target_a_train)
 
 #%%
+#Create class Models to print predictions and corresponding metrics - 14
 class Models:
     def __init__(self,X_train,X_test,y_train,y_test):
         self.X_train=X_train
