@@ -138,6 +138,7 @@ class Models:
         lr_confusion_matrix = confusion_matrix(self.y_test, y_pred1)
         lr_accuracy_score = accuracy_score(self.y_test, y_pred1)
         lr_recall_score = recall_score(self.y_test, y_pred1)
+        print(type(y_pred1))
         print("Logistic Regression Predictions: \n{}".format(y_pred1))
         print("Logistic Regression Confusion Matrix: \n{}".format(lr_confusion_matrix))
         print("Logistic Regression Accuracy Score: {}%".format(round(lr_accuracy_score * 100, 0)))
