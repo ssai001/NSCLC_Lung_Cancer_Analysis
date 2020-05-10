@@ -75,7 +75,7 @@ list(enumerate(merged_dataframes.columns))
 
 
 #%%
-#Drop the gene-related columns that have a sum less than 10
+#Drop the gene-related columns that have a sum less than 10 across all patient identifiers - 9
 merged_dataframes_only_genes = merged_dataframes.iloc[:,12:62]
 gene_sum = merged_dataframes_only_genes.sum(axis=0)
 print(gene_sum)
