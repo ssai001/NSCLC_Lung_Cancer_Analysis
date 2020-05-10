@@ -197,3 +197,40 @@ np.bincount(target_a_train)
 
 
 #%%
+class Predictions:
+    def __init__(self,X_train,X_test,y_train):
+        self.X_train=X_train
+        self.X_test=X_test
+        self.y_train=y_train
+    def LogisticRegression(self):
+        lr =  LogisticRegression()
+        lr.fit(self.X_train, self.y_train)
+        y_pred1=lr.predict(self.X_test)
+        return y_pred1
+    def NaiveBayes(self):
+        nb =  GaussianNB()
+        nb.fit(self.X_train, self.y_train)
+        y_pred2=nb.predict(self.X_test)
+        return y_pred2
+    def DecisionTree(self):
+        dt = DecisionTreeClassifier()
+        dt.fit(self.X_train, self.y_train)
+        y_pred3=dt.predict(self.X_test)
+        return y_pred3
+    def KNN(self):
+        knn = KNeighborsClassifier(n_neighbors=15)
+        knn.fit(self.X_train, self.y_train)
+        y_pred4=knn.predict(self.X_test)
+        return y_pred4
+    def LinearDiscriminantAnalysis(self):
+        lda = LinearDiscriminantAnalysis()
+        lda.fit(self.X_train, self.y_train)
+        y_pred5=lda.predict(self.X_test)
+        return y_pred5
+
+gc_predictions = Predictions(features_a_train, features_a_test, target_a_train)
+gc_predictions_LR = gc_predictions.LogisticRegression()
+gc_predictions_NB = gc_predictions.NaiveBayes()
+gc_predictions_DT = gc_predictions.DecisionTree()
+gc_predictions_KNN = gc_predictions.KNN()
+gc_predictions_LDA = gc_predictions.LinearDiscriminantAnalysis()
