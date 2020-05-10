@@ -124,7 +124,7 @@ smt = SMOTE()
 features_a_train,target_a_train = smt.fit_sample(features_a_train,target_a_train)
 np.bincount(target_a_train)
 
-%%
+#%%
 class Models:
     def __init__(self,X_train,X_test,y_train,y_test):
         self.X_train=X_train
