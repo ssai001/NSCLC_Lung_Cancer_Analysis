@@ -87,11 +87,13 @@ merged_dataframes.drop(merged_dataframes.columns[drop_cols], axis = 1, inplace =
 
 
 #%%
+#Determine datatypes of columns that need to be converted from categorical to numerical - 10
 list(enumerate(merged_dataframes.columns))
 merged_dataframes.select_dtypes(include=['number'])
 
 
 # %%
+#Label encoding for target column - 11
 merged_dataframes.Outcome = merged_dataframes.Outcome.map({"Alive": 0, "Dead": 1})
 merged_dataframes = pd.get_dummies(merged_dataframes, drop_first=True)
 print(list(enumerate(merged_dataframes.columns)))
