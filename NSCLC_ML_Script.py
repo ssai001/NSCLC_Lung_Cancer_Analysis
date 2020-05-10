@@ -63,6 +63,7 @@ for gene in unique_genes:
     print (merged_dataframes)
 
 #%%
+#Determine contents of new merged_dataframes columns - 8
 print(list(enumerate(merged_dataframes.columns)))
 print(len(list(merged_dataframes.columns)))
 
