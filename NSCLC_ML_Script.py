@@ -234,3 +234,8 @@ gc_predictions_NB = gc_predictions.NaiveBayes()
 gc_predictions_DT = gc_predictions.DecisionTree()
 gc_predictions_KNN = gc_predictions.KNN()
 gc_predictions_LDA = gc_predictions.LinearDiscriminantAnalysis()
+
+
+#%%
+class LRMetrics(Predictions):
+    pass
