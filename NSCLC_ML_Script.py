@@ -246,7 +246,7 @@ class LRMetrics:
         return lr_confusion_matrix
 
 mt = LRMetrics(target_a_test,gc_predictions_LR)
-mt_LR = mt.LRConfusionMatrix()
-print(mt_LR)
+mt_LR_CM = mt.LRConfusionMatrix()
+print(mt_LR_CM)
 
 #%%
