@@ -29,25 +29,19 @@ print(unique_genes)
 print("There are {} unique genes among all patient ID's.".format(len(unique_genes)))
 
 
-#%%
-#Determine number of NA's per column for both csv files - 3
-print(clinical_data.columns[clinical_data.isna().any()].tolist())
-print(genomics_data.columns[genomics_data.isna().any()].tolist())
-
-
 # %%
-#Combine all genes that are common for each patient identifier on genomics.csv - 4
+#Combine all genes that are common for each patient identifier on genomics.csv - 3
 genomics_data_grouped = genomics_data.groupby('ID')['Gene'].apply(list)
 print(genomics_data_grouped)
 
 # %%
-#Merging both the clinical and genomic csv files together - 5
+#Merging both the clinical and genomic csv files together - 4
 merged_dataframes = pd.merge(clinical_data, genomics_data_grouped, on="ID")
 print(merged_dataframes)
 
 
 #%%
-#Use the count function in Python to get number of occurrences of particular gene in each row - 6
+#Use the count function in Python to get number of occurrences of particular gene in each row - 5
 def count_occurrence(GeneName):
     new_column = []
     for row in merged_dataframes['Gene']:
@@ -63,13 +57,13 @@ for gene in unique_genes:
     print (merged_dataframes)
 
 #%%
-#Determine contents of new merged_dataframes columns - 8
+#Determine contents of new merged_dataframes columns - 6
 print(list(enumerate(merged_dataframes.columns)))
 print(len(list(merged_dataframes.columns)))
 
 
 #%%
-#Determine % of NA's missing per column
+#Determine % of NA's missing per column - 7
 merged_dataframes_no_genes = merged_dataframes.iloc[:,0:16]
 NA_percentage = (len(merged_dataframes_no_genes) - merged_dataframes_no_genes.count()) / len(merged_dataframes_no_genes) * 100.0
 print(NA_percentage)
