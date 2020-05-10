@@ -64,7 +64,7 @@ print(len(list(merged_dataframes.columns)))
 
 #%%
 #Determine % of NA's missing per column - 7
-merged_dataframes_no_genes = merged_dataframes.iloc[:,0:16]
+merged_dataframes_no_genes = merged_dataframes.iloc[:,0:17]
 NA_percentage = (len(merged_dataframes_no_genes) - merged_dataframes_no_genes.count()) / len(merged_dataframes_no_genes) * 100.0
 print(NA_percentage)
 
