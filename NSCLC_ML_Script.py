@@ -240,7 +240,7 @@ gc_predictions_LDA = gc_predictions.LinearDiscriminantAnalysis()
 class LRMetrics:
     def __init__(self,y_test,LR_pred):
         self.y_test = y_test
-        self.LRM_pred=LRM_pred
+        self.LR_pred=LR_pred
     def LRConfusionMatrix(self):
         lr_confusion_matrix = confusion_matrix(self.y_test, self.LRM_pred)
         return lr_confusion_matrix
