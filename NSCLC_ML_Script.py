@@ -70,7 +70,7 @@ print(NA_percentage)
 
 
 # %%
-#Deleting Tumor.Size and M since both columns have ~50% missing values
+#Deleting all columns that contain missing values - 8
 merged_dataframes = merged_dataframes.drop(['T','N','M','Tumor.Size','Gene'],axis=1)
 list(enumerate(merged_dataframes.columns))
 
