@@ -244,9 +244,18 @@ class LRMetrics:
     def LRConfusionMatrix(self):
         lr_confusion_matrix = confusion_matrix(self.y_test, self.LR_pred)
         return lr_confusion_matrix
+    def LRAccuracyScore(self):
+        lr_accuracy_score = accuracy_score(self.y_test, self.LR_pred)
+        return lr_accuracy_score
+    def LRREcallScore(self):
+        lr_recall_score = recall_score(self.y_test, self.LR_pred)
+        return lr_recall_score
 
 mt = LRMetrics(target_a_test,gc_predictions_LR)
 mt_LR_CM = mt.LRConfusionMatrix()
+mt_LR_AS = mt.LRAccuracyScore()
+mt_LR_RS = mt.LRREcallScore()
 print(mt_LR_CM)
+
 
 #%%
