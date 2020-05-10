@@ -255,7 +255,7 @@ mt = LRMetrics(target_a_test,gc_predictions_LR)
 mt_LR_CM = mt.LRConfusionMatrix()
 mt_LR_AS = mt.LRAccuracyScore()
 mt_LR_RS = mt.LRREcallScore()
-print(mt_LR_CM)
+print(mt_LR_CM,mt_LR_AS,mt_LR_RS)
 
 
 #%%
