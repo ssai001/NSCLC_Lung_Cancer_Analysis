@@ -197,65 +197,10 @@ np.bincount(target_a_train)
 
 
 #%%
-class Predictions:
-    def __init__(self,X_train,X_test,y_train):
-        self.X_train=X_train
-        self.X_test=X_test
-        self.y_train=y_train
-    def LogisticRegression(self):
-        lr =  LogisticRegression()
-        lr.fit(self.X_train, self.y_train)
-        y_pred1=lr.predict(self.X_test)
-        return y_pred1
-    def NaiveBayes(self):
-        nb =  GaussianNB()
-        nb.fit(self.X_train, self.y_train)
-        y_pred2=nb.predict(self.X_test)
-        return y_pred2
-    def DecisionTree(self):
-        dt = DecisionTreeClassifier()
-        dt.fit(self.X_train, self.y_train)
-        y_pred3=dt.predict(self.X_test)
-        return y_pred3
-    def KNN(self):
-        knn = KNeighborsClassifier(n_neighbors=15)
-        knn.fit(self.X_train, self.y_train)
-        y_pred4=knn.predict(self.X_test)
-        return y_pred4
-    def LinearDiscriminantAnalysis(self):
-        lda = LinearDiscriminantAnalysis()
-        lda.fit(self.X_train, self.y_train)
-        y_pred5=lda.predict(self.X_test)
-        return y_pred5
 
-gc_predictions = Predictions(features_a_train, features_a_test, target_a_train)
-gc_predictions_LR = gc_predictions.LogisticRegression()
-gc_predictions_NB = gc_predictions.NaiveBayes()
-gc_predictions_DT = gc_predictions.DecisionTree()
-gc_predictions_KNN = gc_predictions.KNN()
-gc_predictions_LDA = gc_predictions.LinearDiscriminantAnalysis()
 
 
 #%%
-class LRMetrics:
-    def __init__(self,y_test,LR_pred):
-        self.y_test = y_test
-        self.LR_pred=LR_pred
-    def LRConfusionMatrix(self):
-        lr_confusion_matrix = confusion_matrix(self.y_test, self.LR_pred)
-        return lr_confusion_matrix
-    def LRAccuracyScore(self):
-        lr_accuracy_score = accuracy_score(self.y_test, self.LR_pred)
-        return lr_accuracy_score
-    def LRREcallScore(self):
-        lr_recall_score = recall_score(self.y_test, self.LR_pred)
-        return lr_recall_score
-
-LR_mt = LRMetrics(target_a_test,gc_predictions_LR)
-mt_LR_CM = LR_mt.LRConfusionMatrix()
-mt_LR_AS = LR_mt.LRAccuracyScore()
-mt_LR_RS = LR_mt.LRREcallScore()
-print(mt_LR_CM,mt_LR_AS,mt_LR_RS)
 
 
 #%%
