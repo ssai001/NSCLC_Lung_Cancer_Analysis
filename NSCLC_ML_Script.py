@@ -16,7 +16,6 @@ from imblearn.over_sampling import SMOTE
 from sklearn.metrics import accuracy_score, confusion_matrix, recall_score
 
 
-
 #%%
 #Analyze content of genomics.csv file - 2
 clinical_data = pd.read_csv('clinical.csv')
@@ -30,6 +29,7 @@ print("There are {} unique genes among all patient ID's.".format(len(unique_gene
 #Combine all genes that are common for each patient identifier on genomics.csv - 3
 genomics_data_grouped = genomics_data.groupby('ID')['Gene'].apply(list)
 print(genomics_data_grouped)
+
 
 # %%
 #Merging both the clinical and genomic csv files together - 4
@@ -115,6 +115,7 @@ smt = SMOTE()
 features_a_train,target_a_train = smt.fit_sample(features_a_train,target_a_train)
 np.bincount(target_a_train)
 
+
 #%%
 #Create class Models to print predictions and corresponding metrics - 14
 class Models:
@@ -186,6 +187,3 @@ gc_models_NB = gc_models.NaiveBayes()
 gc_models_DT = gc_models.DecisionTree()
 gc_models_KNN = gc_models.KNN()
 gc_models_LDA = gc_models.LinearDiscriminantAnalysis()
-
-
-#%%
