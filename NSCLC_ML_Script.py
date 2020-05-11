@@ -192,6 +192,7 @@ gc_models_KNN = gc_models.KNN()
 gc_models_LDA = gc_models.LinearDiscriminantAnalysis()
 
 
+#Create Metrics class to evaluate accuracy from models in above class - 15
 class Metrics:
     def __init__(self,y_test,gc_preds):
         self.y_test = y_test
