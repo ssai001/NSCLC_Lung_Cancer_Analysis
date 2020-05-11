@@ -254,5 +254,3 @@ print(gc_models_NB_metrics.NBConfusionMatrix(),gc_models_NB_metrics.NBAccuracySc
 print(gc_models_DT_metrics.DTConfusionMatrix(),gc_models_DT_metrics.DTAccuracyScore(),gc_models_DT_metrics.DTRecallScore())
 print(gc_models_KNN_metrics.KNNConfusionMatrix(),gc_models_KNN_metrics.KNNAccuracyScore(),gc_models_KNN_metrics.KNNRecallScore())
 print(gc_models_LDA_metrics.LDAConfusionMatrix(),gc_models_LDA_metrics.LDAAccuracyScore(),gc_models_LDA_metrics.LDARecallScore())
-
-#%%
