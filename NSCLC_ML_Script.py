@@ -248,9 +248,10 @@ gc_models_DT_metrics = Metrics(target_a_test,gc_models_DT)
 gc_models_KNN_metrics = Metrics(target_a_test,gc_models_KNN)
 gc_models_LDA_metrics = Metrics(target_a_test,gc_models_LDA)
 
-print(gc_models_LR_metrics.LRConfusionMatrix,gc_models_LR_metrics.LRAccuracyScore,gc_models_LR_metrics.LRRecallScore)
-print(gc_models_NB_metrics.NBConfusionMatrix,gc_models_NB_metrics.NBAccuracyScore,gc_models_NB_metrics.NBRecallScore)
-print(gc_models_DT_metrics.DTConfusionMatrix,gc_models_DT_metrics.DTAccuracyScore,gc_models_DT_metrics.DTRecallScore)
-print(gc_models_KNN_metrics.KNNConfusionMatrix,gc_models_KNN_metrics.KNNAccuracyScore,gc_models_KNN_metrics.KNNRecallScore)
-print(gc_models_LDA_metrics.LDAConfusionMatrix,gc_models_LDA_metrics.LDAAccuracyScore,gc_models_LDA_metrics.LDARecallScore)
+print(gc_models_LR_metrics.LRConfusionMatrix(),gc_models_LR_metrics.LRAccuracyScore(),gc_models_LR_metrics.LRRecallScore())
+print(gc_models_NB_metrics.NBConfusionMatrix(),gc_models_NB_metrics.NBAccuracyScore(),gc_models_NB_metrics.NBRecallScore())
+print(gc_models_DT_metrics.DTConfusionMatrix(),gc_models_DT_metrics.DTAccuracyScore(),gc_models_DT_metrics.DTRecallScore())
+print(gc_models_KNN_metrics.KNNConfusionMatrix(),gc_models_KNN_metrics.KNNAccuracyScore(),gc_models_KNN_metrics.KNNRecallScore())
+print(gc_models_LDA_metrics.LDAConfusionMatrix(),gc_models_LDA_metrics.LDAAccuracyScore(),gc_models_LDA_metrics.LDARecallScore())
 
+#%%
