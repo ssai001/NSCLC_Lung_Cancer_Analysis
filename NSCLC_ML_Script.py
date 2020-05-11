@@ -190,3 +190,67 @@ gc_models_NB = gc_models.NaiveBayes()
 gc_models_DT = gc_models.DecisionTree()
 gc_models_KNN = gc_models.KNN()
 gc_models_LDA = gc_models.LinearDiscriminantAnalysis()
+
+
+class Metrics:
+    def __init__(self,y_test,gc_preds):
+        self.y_test = y_test
+        self.gc_preds = gc_preds
+    def LRConfusionMatrix(self):
+        lr_confusion_matrix = confusion_matrix(self.y_test, self.gc_preds)
+        return lr_confusion_matrix
+    def LRAccuracyScore(self):
+        lr_accuracy_score = accuracy_score(self.y_test, self.gc_preds)
+        return lr_accuracy_score
+    def LRRecallScore(self):
+        lr_recall_score = recall_score(self.y_test, self.gc_preds)
+        return lr_recall_score
+    def NBConfusionMatrix(self):
+        nb_confusion_matrix = confusion_matrix(self.y_test, self.gc_preds)
+        return nb_confusion_matrix
+    def NBAccuracyScore(self):
+        nb_accuracy_score = accuracy_score(self.y_test, self.gc_preds)
+        return nb_accuracy_score
+    def NBRecallScore(self):
+        nb_recall_score = recall_score(self.y_test, self.gc_preds)
+        return nb_recall_score
+    def DTConfusionMatrix(self):
+        dt_confusion_matrix = confusion_matrix(self.y_test, self.gc_preds)
+        return dt_confusion_matrix
+    def DTAccuracyScore(self):
+        dt_accuracy_score = accuracy_score(self.y_test, self.gc_preds)
+        return dt_accuracy_score
+    def DTRecallScore(self):
+        dt_recall_score = recall_score(self.y_test, self.gc_preds)
+        return dt_recall_score
+    def KNNConfusionMatrix(self):
+        knn_confusion_matrix = confusion_matrix(self.y_test, self.gc_preds)
+        return knn_confusion_matrix
+    def KNNAccuracyScore(self):
+        knn_accuracy_score = accuracy_score(self.y_test, self.gc_preds)
+        return knn_accuracy_score
+    def KNNRecallScore(self):
+        knn_recall_score = recall_score(self.y_test, self.gc_preds)
+        return knn_recall_score
+    def LDAConfusionMatrix(self):
+        lda_confusion_matrix = confusion_matrix(self.y_test, self.gc_preds)
+        return lda_confusion_matrix
+    def LDAAccuracyScore(self):
+        lda_accuracy_score = accuracy_score(self.y_test, self.gc_preds)
+        return lda_accuracy_score
+    def LDARecallScore(self):
+        lda_recall_score = recall_score(self.y_test, self.gc_preds)
+        return lda_recall_score
+
+gc_models_LR_metrics = Metrics(target_a_test,gc_models_LR)
+gc_models_NB_metrics = Metrics(target_a_test,gc_models_NB)
+gc_models_DT_metrics = Metrics(target_a_test,gc_models_DT)
+gc_models_KNN_metrics = Metrics(target_a_test,gc_models_KNN)
+gc_models_LDA_metrics = Metrics(target_a_test,gc_models_LDA)
+
+print(gc_models_LR_metrics.LRConfusionMatrix,gc_models_LR_metrics.LRAccuracyScore,gc_models_LR_metrics.LRRecallScore)
+print(gc_models_NB_metrics.NBConfusionMatrix,gc_models_NB_metrics.NBAccuracyScore,gc_models_NB_metrics.NBRecallScore)
+print(gc_models_DT_metrics.DTConfusionMatrix,gc_models_DT_metrics.DTAccuracyScore,gc_models_DT_metrics.DTRecallScore)
+print(gc_models_KNN_metrics.KNNConfusionMatrix,gc_models_KNN_metrics.KNNAccuracyScore,gc_models_KNN_metrics.KNNRecallScore)
+print(gc_models_LDA_metrics.LDAConfusionMatrix,gc_models_LDA_metrics.LDAAccuracyScore,gc_models_LDA_metrics.LDARecallScore)
+
